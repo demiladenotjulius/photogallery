@@ -1,0 +1,87 @@
+.supportcontain{
+    padding: 30px;
+    display: flex;
+   flex-direction: column;
+  justify-content: center;
+  text-align:center ;
+  align-items: center;
+}
+.supporticon{
+    font-size: 100px;
+}
+.back{
+    font-size: 30px;
+
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: 8rem;
+    margin-bottom: 4rem;
+}
+.takesupport{
+    padding: 100px;
+    height: 90vh;
+    background-color: white;
+    width: 70%;
+    margin-left: 7rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+#title{
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    padding: 15px;
+    width: 28rem;
+    outline: none;
+    border-radius: 5px;
+    background-color: #F0F1F1;
+    border: none;
+
+    
+}
+#priority{
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    padding: 15px;
+    width: 30rem;
+    border-radius: 5px;
+     border: none;
+    outline: none;
+    background-color: #F0F1F1;
+
+
+}
+#description{
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    width: 28rem;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    height: 250px;
+    background-color: #F0F1F1;
+
+   
+    
+}
+#description::placeholder{
+   font-size: 30px;
+    color: red;
+
+}
+#submit{
+    margin-bottom: 1rem;
+    margin-top: 10px;
+    padding: 15px;
+    width: 30rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: blue;
+    color: white;
+    font-weight: 700;
+}
