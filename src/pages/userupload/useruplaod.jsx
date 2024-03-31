@@ -5,13 +5,14 @@ import './userupload.css'
 export default function UploadUser() {
     const [file, setFile] = useState(null);
     const [images, setImages] = useState([]);
-    const [captions, setCaptions] = useState({}); // Use an object to store captions
+    const [captions, setCaptions] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData();
         formData.append('image', file);
+        formData.append('caption', captions);
 
         try {
             const response = await axios.post('http://localhost:3700/upload', formData);
@@ -32,7 +33,7 @@ export default function UploadUser() {
         try {
             const response = await axios.get('http://localhost:3700/uploads');
             const imagesData = response.data;
-            setImages(imagesData.map(item => item.Image)); // Store image filenames
+            setImages(imagesData.map(item => item.Image)); 
 
             // Extract captions and store them in the captions object
             const captionsObj = {};
@@ -46,14 +47,21 @@ export default function UploadUser() {
     };
 
     useEffect(() => {
-        fetchUploadedImages(); // Fetch uploaded images when the component mounts
+        fetchUploadedImages(); 
     }, []);
 
     return (
         <div>
             <div>
                 <input type="file" name="image" onChange={e => setFile(e.target.files[0])} />
-                <button onClick={handleSubmit} type="submit">Share</button>
+                <input
+                    type="text"
+                    name="caption"
+                    placeholder="Enter caption"
+                    value={typeof captions === 'object' ? '' : captions} // Check if captions is an object, if so, set it to an empty string
+                    onChange={e => setCaptions(e.target.value)}
+                />
+                <button onClick={handleSubmit}>Share</button>
             </div>
            
             <div>
