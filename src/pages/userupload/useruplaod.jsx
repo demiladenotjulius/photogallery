@@ -36,12 +36,12 @@ export default function UploadUser() {
         try {
             const response = await axios.get(FETCH_URL);
             const imagesData = response.data;
-            setImages(imagesData.map(item => item.Image)); 
+            setImages(imagesData.map(item => item.image)); 
 
             // Extract captions and store them in the captions object
             const captionsObj = {};
             imagesData.forEach(item => {
-                captionsObj[item.Image] = item.Caption;
+                captionsObj[item.image] = item.caption;
             });
             setCaptions(captionsObj);
         } catch (error) {

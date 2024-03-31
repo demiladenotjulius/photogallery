@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route} from 'react-router'
 // import UserLogin  from './pages/userlogin/userlogin';
 // import Login from './pages/Login/Login'
-// import Home from './pages/Home/Home'
+import Home from './pages/Home/Home'
 // import Support from './pages/support/support'
 // import Deposits from './pages/deposits/deposits'
 // import Transfer from './pages/transfer/transfer'
@@ -17,7 +17,7 @@ function App() {
     <>
     <Routes>
 
-      <Route index element={<UploadUser/>}></Route>
+      <Route index element={<Home/>}></Route>
       {/* <Route path='/login' element={<Login/>}></Route> */}
       {/* <Route path='/home' element={<Home/>}></Route> */}
       {/* <Route path='/support' element={<Support/>}></Route> */}
@@ -25,7 +25,7 @@ function App() {
       {/* <Route path='/transaction' element={<Transaction/>}></Route> */}
       {/* <Route path='/local-transfer' element={<Transfer/>}></Route> */}
       {/* <Route path='/deposits' element={<Deposits/>}></Route> */}
-      {/* <Route path='/upload' element={<UploadUser/>}></Route> */}
+      <Route path='/user-upload' element={<UploadUser/>}></Route>
 
 
     </Routes>
