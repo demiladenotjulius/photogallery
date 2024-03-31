@@ -6,6 +6,9 @@ export default function UploadUser() {
     const [file, setFile] = useState(null);
     const [images, setImages] = useState([]);
     const [captions, setCaptions] = useState('');
+    const UPLOAD_URL = 'https://thebankserver.onrender.com/upload';
+    const FETCH_URL = 'https://thebankserver.onrender.com/uploads';
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,7 +18,7 @@ export default function UploadUser() {
         formData.append('caption', captions);
 
         try {
-            const response = await axios.post('http://localhost:3700/upload', formData);
+            const response = await axios.post(UPLOAD_URL, formData);
             console.log(response.data); 
 
             if (response.status === 201) {
@@ -31,7 +34,7 @@ export default function UploadUser() {
 
     const fetchUploadedImages = async () => {
         try {
-            const response = await axios.get('http://localhost:3700/uploads');
+            const response = await axios.get(FETCH_URL);
             const imagesData = response.data;
             setImages(imagesData.map(item => item.Image)); 
 
@@ -58,7 +61,7 @@ export default function UploadUser() {
                     type="text"
                     name="caption"
                     placeholder="Enter caption"
-                    value={typeof captions === 'object' ? '' : captions} // Check if captions is an object, if so, set it to an empty string
+                    value={typeof captions === 'object' ? '' : captions} 
                     onChange={e => setCaptions(e.target.value)}
                 />
                 <button onClick={handleSubmit}>Share</button>
@@ -68,7 +71,7 @@ export default function UploadUser() {
                 <h2>All Uploaded Images:</h2>
                 {images.map((image, index) => (
                     <div key={index}>
-                        <img id='images' src={`http://localhost:3700/uploads/${image}`} alt={`Uploaded ${index}`} />
+                        <img id='images' src={`${FETCH_URL}/${image}`} alt={`Uploaded ${index}`} />
                         <p>{captions[image]}</p> {/* Access caption using the image filename */}
                     </div>
                 ))}

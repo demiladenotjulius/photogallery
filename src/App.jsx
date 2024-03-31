@@ -18,13 +18,13 @@ function App() {
     <Routes>
 
       <Route index element={<UserLogin/>}></Route>
-      <Route path='/login' element={<Login/>}></Route>
-      <Route path='/home' element={<Home/>}></Route>
-      <Route path='/support' element={<Support/>}></Route>
-      <Route path='/settings' element={<Settingss/>}></Route>
+      {/* <Route path='/login' element={<Login/>}></Route> */}
+      {/* <Route path='/home' element={<Home/>}></Route> */}
+      {/* <Route path='/support' element={<Support/>}></Route> */}
+      {/* <Route path='/settings' element={<Settingss/>}></Route> */}
       {/* <Route path='/transaction' element={<Transaction/>}></Route> */}
-      <Route path='/local-transfer' element={<Transfer/>}></Route>
-      <Route path='/deposits' element={<Deposits/>}></Route>
+      {/* <Route path='/local-transfer' element={<Transfer/>}></Route> */}
+      {/* <Route path='/deposits' element={<Deposits/>}></Route> */}
       <Route path='/upload' element={<UploadUser/>}></Route>
 
 
