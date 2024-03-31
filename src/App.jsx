@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route} from 'react-router'
 import UserLogin  from './pages/userlogin/userlogin';
-import Login from './pages/Login/Login'
-import Home from './pages/Home/Home'
-import Support from './pages/support/support'
-import Deposits from './pages/deposits/deposits'
-import Transfer from './pages/transfer/transfer'
-import Settingss from './pages/settings/settings'
+// import Login from './pages/Login/Login'
+// import Home from './pages/Home/Home'
+// import Support from './pages/support/support'
+// import Deposits from './pages/deposits/deposits'
+// import Transfer from './pages/transfer/transfer'
+// import Settingss from './pages/settings/settings'
 // import Transaction from './pages/transactions/transactions'
 import UploadUser from './pages/userupload/useruplaod'
 
