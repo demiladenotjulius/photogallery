@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route} from 'react-router'
-import UserLogin  from './pages/userlogin/userlogin';
+// import UserLogin  from './pages/userlogin/userlogin';
 // import Login from './pages/Login/Login'
 // import Home from './pages/Home/Home'
 // import Support from './pages/support/support'
@@ -17,7 +17,7 @@ function App() {
     <>
     <Routes>
 
-      <Route index element={<UserLogin/>}></Route>
+      <Route index element={<UploadUser/>}></Route>
       {/* <Route path='/login' element={<Login/>}></Route> */}
       {/* <Route path='/home' element={<Home/>}></Route> */}
       {/* <Route path='/support' element={<Support/>}></Route> */}
