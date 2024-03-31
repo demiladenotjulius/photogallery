@@ -25,7 +25,7 @@ function App() {
       {/* <Route path='/transaction' element={<Transaction/>}></Route> */}
       {/* <Route path='/local-transfer' element={<Transfer/>}></Route> */}
       {/* <Route path='/deposits' element={<Deposits/>}></Route> */}
-      <Route path='/upload' element={<UploadUser/>}></Route>
+      {/* <Route path='/upload' element={<UploadUser/>}></Route> */}
 
 
     </Routes>
