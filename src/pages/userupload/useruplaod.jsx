@@ -38,7 +38,6 @@ export default function UploadUser() {
             const imagesData = response.data;
             setImages(imagesData.map(item => item.image)); 
 
-            // Extract captions and store them in the captions object
             const captionsObj = {};
             imagesData.forEach(item => {
                 captionsObj[item.image] = item.caption;

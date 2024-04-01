@@ -27,7 +27,7 @@ function Home () {
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
-    setIsContentBlurred(!isContentBlurred); // Toggle content blur
+    // setIsContentBlurred(!isContentBlurred); 
 
   };
 
