@@ -119,7 +119,8 @@ function Home () {
               <Link to="/logout" className="link-with-icon"> <CiLogout className='icon' />Logout</Link>
 
               <Link to="/user-upload" className="link-with-icon"> <CiLogout className='icon' />Logout</Link>
-
+              
+              <Link to="/camera">Camera</Link>
             </div>
             </>
       )}
