@@ -9,6 +9,7 @@ import Home from './pages/Home/Home'
 // import Settingss from './pages/settings/settings'
 // import Transaction from './pages/transactions/transactions'
 import UploadUser from './pages/userupload/useruplaod'
+import Camera from './pages/camera/camera'
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
       {/* <Route path='/local-transfer' element={<Transfer/>}></Route> */}
       {/* <Route path='/deposits' element={<Deposits/>}></Route> */}
       <Route path='/user-upload' element={<UploadUser/>}></Route>
-
+      <Route path='/camera' element={<Camera/>}></Route>
 
     </Routes>
     </>

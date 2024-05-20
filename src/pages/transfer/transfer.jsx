@@ -1,24 +1,24 @@
-// import React from 'react';
+import React from 'react';
 
-// function Transfer (){
-
-
-
-//     return (
-
-//         <h1>transfer me pls </h1>
+function Transfer (){
 
 
+
+    return (
+
+        <h1>transfer me pls </h1>
 
 
 
 
-//     )
+
+
+    )
 
 
 
 
-// }
+}
 
 
-// export default Transfer;
+export default Transfer;

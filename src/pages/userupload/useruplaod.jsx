@@ -6,9 +6,11 @@ export default function UploadUser() {
     const [file, setFile] = useState(null);
     const [images, setImages] = useState([]);
     const [captions, setCaptions] = useState('');
-    const UPLOAD_URL = 'https://thebankserver.onrender.com/upload';
-    const FETCH_URL = 'https://thebankserver.onrender.com/uploads';
-
+    // const UPLOAD_URL = 'https://thebankserver.onrender.com/upload';
+    // const FETCH_URL = 'https://thebankserver.onrender.com/uploads';
+    const UPLOAD_URL = 'http://localhost:3700/upload';
+    const FETCH_URL = 'http://localhost:3700/uploads';
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -69,11 +71,13 @@ export default function UploadUser() {
             <div>
                 <h2>All Uploaded Images:</h2>
                 {images.map((image, index) => (
-                    <div key={index}>
-                        <img id='images' src={`${FETCH_URL}/${image}`} alt={`Uploaded ${index}`} />
-                        <p>{captions[image]}</p> {/* Access caption using the image filename */}
-                    </div>
-                ))}
+                  <div key={index}>
+                    <img id='images' src={image} alt={`Uploaded ${index}`} />
+                     <p>{captions[image]}</p> {/* Access caption using the image filename */}
+                </div>
+))}
+
+            
             </div>
         </div>
     );
