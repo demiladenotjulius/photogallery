@@ -1,11 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 function Camera() {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const imagesContainerRef = useRef(null);
+    const [ ShowCameraButtons, setShowCameraButtons] = useState ( false)
 
-    const handleCamera = async () => {
+    const OpenCamera = async () =>{
+        setShowCameraButtons(true);
+
+    }
+
+    const FrontCamera = async () => {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: {facingMode: "user"} });
             videoRef.current.srcObject = stream;
@@ -59,9 +65,16 @@ function Camera() {
 
     return (
         <div style={{width: '100%'}} className="mycontainer">
-            <button style={{marginBottom: '30px'}} onClick={handleCamera}>Start Camera </button>
+            <button onClick={OpenCamera} style={{marginBottom: '30px'}} >Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
-            <button onClick={BackCamera} >BackCmaera</button>
+            { ShowCameraButtons && (
+                <>
+               <button id='front'  onClick={FrontCamera}>Front Camera</button>
+               <button id='back' onClick={BackCamera} >Back Cmaera</button> 
+                </>
+                
+            ) }
+
             <div style={{height: '70%'}} className='vidDiv'>
 
                 <video ref={videoRef} autoPlay playsInline style={{ width: '50vh', transform: 'scaleX(-1)', borderRadius: '10px', marginLeft: '-60px' }} />
