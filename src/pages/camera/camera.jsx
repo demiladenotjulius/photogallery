@@ -47,7 +47,7 @@ function Camera() {
 
 
     return (
-        <div className="mycontainer">
+        <div style={{width: '100%'}} className="mycontainer">
             <button style={{marginBottom: '30px'}} onClick={handleCamera}>Start Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
             <div style={{height: '70%'}} className='vidDiv'>
