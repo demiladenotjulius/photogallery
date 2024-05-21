@@ -38,7 +38,7 @@ function Camera() {
         // link.click();
         const img = document.createElement('img');
         img.src = image;
-        img.style.width = '30%'; // Adjust as needed
+        img.style.width = '40%'; // Adjust as needed
         img.style.margin = '10px'; // Add some margin for spacing
 
         // Append the img element to the getimage div
@@ -50,12 +50,13 @@ function Camera() {
         <div className="mycontainer">
             <button style={{marginBottom: '30px'}} onClick={handleCamera}>Start Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
-            <div>
-                <video ref={videoRef} autoPlay playsInline style={{ width: '30%', height: '40%', transform: 'scaleX(-1)', borderRadius: '10px' }} />
+            <div style={{height: '70%'}} className='vidDiv'>
+
+                <video ref={videoRef} autoPlay playsInline style={{ width: '50vh', transform: 'scaleX(-1)', borderRadius: '10px', marginLeft: '-60px' }} />
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
             </div>
 
-            <div className="getimage" ref={imagesContainerRef}>
+            <div className="getimage flex" ref={imagesContainerRef}>
      
             </div>
         </div>
