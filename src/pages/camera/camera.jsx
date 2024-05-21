@@ -7,7 +7,15 @@ function Camera() {
 
     const handleCamera = async () => {
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const stream = await navigator.mediaDevices.getUserMedia({ video: {facingMode: "user"} });
+            videoRef.current.srcObject = stream;
+        } catch (error) {
+            console.error('Error accessing camera:', error);
+        }
+    };
+    const BackCamera = async () => {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: {facingMode: "environment"} });
             videoRef.current.srcObject = stream;
         } catch (error) {
             console.error('Error accessing camera:', error);
@@ -24,7 +32,10 @@ function Camera() {
         canvas.height = video.videoHeight;
 
         // Draw the current frame from the video onto the canvas
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        context.save();
+        context.scale(-1, 1); // Flip the image horizontally
+        context.drawImage(video, -canvas.width, 0, canvas.width, canvas.height);
+        context.restore();
 
         // Create a data URL from the canvas image
         const image = canvas.toDataURL('image/png');
@@ -50,6 +61,7 @@ function Camera() {
         <div style={{width: '100%'}} className="mycontainer">
             <button style={{marginBottom: '30px'}} onClick={handleCamera}>Start Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
+            <button onClick={BackCamera} >BackCmaera</button>
             <div style={{height: '70%'}} className='vidDiv'>
 
                 <video ref={videoRef} autoPlay playsInline style={{ width: '50vh', transform: 'scaleX(-1)', borderRadius: '10px', marginLeft: '-60px' }} />
