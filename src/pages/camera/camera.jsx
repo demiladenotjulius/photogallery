@@ -45,19 +45,18 @@ function Camera() {
         imagesContainerRef.current.appendChild(img);
     };
 
+
     return (
         <div className="mycontainer">
             <button style={{marginBottom: '30px'}} onClick={handleCamera}>Start Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
             <div>
-                <video ref={videoRef} autoPlay style={{ width: '30%', height: '40%', transform: 'scaleX(-1)', borderRadius: '10px' }} />
+                <video ref={videoRef} autoPlay playsInline style={{ width: '30%', height: '40%', transform: 'scaleX(-1)', borderRadius: '10px' }} />
                 <canvas ref={canvasRef} style={{ display: 'none' }} />
             </div>
 
-
             <div className="getimage" ref={imagesContainerRef}>
-
-                
+     
             </div>
         </div>
 
