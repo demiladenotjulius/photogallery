@@ -6,10 +6,13 @@ function Camera() {
     const imagesContainerRef = useRef(null);
     const [ ShowCameraButtons, setShowCameraButtons] = useState ( false)
 
-    const OpenCamera = async () =>{
-        setShowCameraButtons(true);
+    // const OpenCamera = async () =>{
+    //     setShowCameraButtons(true);
 
-    }
+    // }
+    const toggleCameraButtons = () => {
+        setShowCameraButtons(prevState => !prevState);
+    };
 
     const FrontCamera = async () => {
         try {
@@ -65,7 +68,7 @@ function Camera() {
 
     return (
         <div style={{width: '100%'}} className="mycontainer">
-            <button onClick={OpenCamera} style={{marginBottom: '30px'}} >Camera </button>
+            <button onClick={toggleCameraButtons} style={{marginBottom: '30px'}} >Camera </button>
             <button onClick={handleSnap}>Snap Picture</button>
             { ShowCameraButtons && (
                 <>
